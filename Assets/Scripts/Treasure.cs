@@ -25,6 +25,8 @@ public class Treasure : MonoBehaviour
         {
             Debug.Log("Treasure Hit by player"); //debug to make sure medthod is called
 
+            ScoreUI.GetComponent<Score>().AddPoint(ScoreReward);
+
             Destroy(gameObject); //Destroy Self
         }
 

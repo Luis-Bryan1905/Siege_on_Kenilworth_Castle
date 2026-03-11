@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
 
     public bool IsPressed;
 
-    public bool active = true;
+    public bool active;
 
     public float lifeSpan;
 
@@ -21,11 +21,23 @@ public class Ball : MonoBehaviour
     private Rigidbody rb;
     private SpringJoint sj;
 
+    GameObject Sling;
+
     private void Awake()
     {
+        active = true;
+        IsPressed = false;
         rb = GetComponent<Rigidbody>();
         sj = GetComponent<SpringJoint>();
 
+    }
+
+    private void Start()
+    {
+        Sling = GameObject.FindGameObjectWithTag("Sling");
+        sj.connectedBody = Sling.GetComponent<Rigidbody>();
+        sj.spring = 25;
+        Debug.Log(sj.connectedBody);
         ReleaseDelay = 1 / (sj.massScale * 4);
     }
 
@@ -77,7 +89,8 @@ public class Ball : MonoBehaviour
     private IEnumerator Destroy()
     {
         yield return new WaitForSeconds(lifeSpan);
+        Sling.GetComponent<BallSpawn>().Spawn();
         Destroy(gameObject);
     }
 
-    }
+}

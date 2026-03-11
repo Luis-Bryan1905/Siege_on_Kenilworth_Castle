@@ -915,7 +915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6550f3a4d3654224390cef3e9c593d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  gb: {fileID: 1386414047}
   minDistance: 0
   maxDistance: 26
 --- !u!1 &339465715
@@ -3687,11 +3686,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193a6f0b8d779b34aba863878b38fa64, type: 3}
---- !u!1 &1386414047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5588737443557666440, guid: 5d2b6949c72e6d342a256137e04ccb5e, type: 3}
-  m_PrefabInstance: {fileID: 8469692792799387054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1386414053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1487564266305904582, guid: 5d2b6949c72e6d342a256137e04ccb5e, type: 3}
@@ -4696,11 +4690,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8492817126810085748, guid: 230137ebec5c970469c9068beaae369b, type: 3}
   m_PrefabInstance: {fileID: 8670281481694604652}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1762359048 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 7195360765575635437, guid: 230137ebec5c970469c9068beaae369b, type: 3}
+--- !u!1 &1845891513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5587988980606398993, guid: 230137ebec5c970469c9068beaae369b, type: 3}
   m_PrefabInstance: {fileID: 8670281481694604652}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1845891514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845891513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe8ede7b3e409748bb64a5308dcb822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallSpawn
+  StageAmount: 3
+  ProjectilePrefab: {fileID: 5588737443557666440, guid: 5d2b6949c72e6d342a256137e04ccb5e, type: 3}
 --- !u!4 &1951044217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 193a6f0b8d779b34aba863878b38fa64, type: 3}
@@ -5217,7 +5225,11 @@ PrefabInstance:
     - target: {fileID: 326481417058821507, guid: 5d2b6949c72e6d342a256137e04ccb5e, type: 3}
       propertyPath: m_ConnectedBody
       value: 
-      objectReference: {fileID: 1762359048}
+      objectReference: {fileID: 0}
+    - target: {fileID: 326481417058821507, guid: 5d2b6949c72e6d342a256137e04ccb5e, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1487564266305904582, guid: 5d2b6949c72e6d342a256137e04ccb5e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5277,6 +5289,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5587988980606398993, guid: 230137ebec5c970469c9068beaae369b, type: 3}
       propertyPath: m_Name
+      value: Sling
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587988980606398993, guid: 230137ebec5c970469c9068beaae369b, type: 3}
+      propertyPath: m_TagString
       value: Sling
       objectReference: {fileID: 0}
     - target: {fileID: 6528719886160482421, guid: 230137ebec5c970469c9068beaae369b, type: 3}
@@ -5342,7 +5358,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5587988980606398993, guid: 230137ebec5c970469c9068beaae369b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1845891514}
   m_SourcePrefab: {fileID: 100100000, guid: 230137ebec5c970469c9068beaae369b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
