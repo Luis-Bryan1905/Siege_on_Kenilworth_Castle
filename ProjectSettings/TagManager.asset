@@ -8,6 +8,10 @@ TagManager:
   - Block
   - ScoreUI
   - Sling
+  - BallUI
+  - PauseMenu
+  - PauseText
+  - PauseButton
   layers:
   - Default
   - TransparentFX

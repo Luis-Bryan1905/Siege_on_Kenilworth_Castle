@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
+public class score : MonoBehaviour
 {
     // base: https://www.youtube.com/watch?v=VOEtOGmHoeE
 
@@ -45,11 +45,11 @@ public class Ball : MonoBehaviour
     {
         if (IsPressed && active)
         {
-            DragBall();
+            Dragscore();
         }
     }
 
-    private void DragBall()
+    private void Dragscore()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.WorldToScreenPoint(transform.position).z;

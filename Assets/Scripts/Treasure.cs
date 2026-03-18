@@ -4,7 +4,7 @@ using UnityEngine;
 public class Treasure : MonoBehaviour
 {
     GameObject ScoreUI;
-    int ScoreReward = 100;  
+    int ScoreReward = 100;
     Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,7 +42,7 @@ public class Treasure : MonoBehaviour
             {
                 Debug.Log("Treasure Hit" + vel); //debug to make sure medthod is called
 
-                ScoreUI.GetComponent<Score>().AddPoint(ScoreReward);
+                GameObject.FindGameObjectWithTag("ScoreUI").GetComponent<Score>().AddPoint(ScoreReward);
 
                 Destroy(gameObject); //Destroy Self
             }

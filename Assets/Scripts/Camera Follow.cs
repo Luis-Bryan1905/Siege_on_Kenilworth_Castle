@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     bool followActive = false;
 
 
-    public void GrabBall()
+    public void Grabscore()
     {
         gb = GameObject.FindGameObjectWithTag("Projectile");
     }
@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        GrabBall();
+        Grabscore();
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour
 
         if (gb != null)
         {
-            if (gb.gameObject.GetComponent<Ball>().IsPressed == true && gb.gameObject.GetComponent<Ball>().active == true)
+            if (gb.gameObject.GetComponent<score>().IsPressed == true && gb.gameObject.GetComponent<score>().active == true)
             {
                 followActive = false;
             }
@@ -51,7 +51,7 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            GrabBall();
+            Grabscore();
         }
 
 
