@@ -7,6 +7,7 @@ public class BallSpawn : MonoBehaviour
     public int StageAmount;
     public int ProjectileAmount = 0;
     public GameObject ProjectilePrefab;   // prefab assigned in inspector
+    public GameObject GameOverMenu;
     GameObject Projectile;
     GameObject Camera;
 
@@ -35,8 +36,19 @@ public class BallSpawn : MonoBehaviour
     {
         ProjectileAmount -= 1;
         BallUI.GetComponent<BallText>().UpdateText();
-        Instantiate(ProjectilePrefab, this.transform.position, Quaternion.identity);
-        Camera.GetComponent<CameraFollow>().Grabscore();
+
+        if (ProjectileAmount > 0)
+        {
+            Instantiate(ProjectilePrefab, this.transform.position, Quaternion.identity);
+            Camera.GetComponent<CameraFollow>().Grabscore();
+        }
+        else if (ProjectileAmount == 0)
+        {
+            Debug.Log("GAME OVER: No more projectiles left");
+            GameObject.FindGameObjectWithTag("PauseButton").SetActive(false);
+            GameOverMenu.GetComponent<GameOverMenu>().Activate();
+        }
+
     }
 
 }

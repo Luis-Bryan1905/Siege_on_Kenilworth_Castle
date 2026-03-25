@@ -12,6 +12,8 @@ TagManager:
   - PauseMenu
   - PauseText
   - PauseButton
+  - GameOverMenu
+  - EventSystem
   layers:
   - Default
   - TransparentFX

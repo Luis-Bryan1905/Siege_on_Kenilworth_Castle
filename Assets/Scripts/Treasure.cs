@@ -4,6 +4,7 @@ using UnityEngine;
 public class Treasure : MonoBehaviour
 {
     GameObject ScoreUI;
+    GameObject EventSystem;
     int ScoreReward = 100;
     Rigidbody rb;
 
@@ -11,6 +12,8 @@ public class Treasure : MonoBehaviour
     void Start()
     {
         ScoreUI = GameObject.FindGameObjectWithTag("ScoreUI");
+        EventSystem = GameObject.FindGameObjectWithTag("EventSystem");
+        EventSystem.GetComponent<TreasureSystem>().AddTreasure();
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class Treasure : MonoBehaviour
             Debug.Log("Treasure Hit by player"); //debug to make sure medthod is called
 
             ScoreUI.GetComponent<Score>().AddPoint(ScoreReward);
-
+            EventSystem.GetComponent<TreasureSystem>().TreasureDestroyed();
             Destroy(gameObject); //Destroy Self
         }
 
@@ -43,7 +46,7 @@ public class Treasure : MonoBehaviour
                 Debug.Log("Treasure Hit" + vel); //debug to make sure medthod is called
 
                 GameObject.FindGameObjectWithTag("ScoreUI").GetComponent<Score>().AddPoint(ScoreReward);
-
+                EventSystem.GetComponent<TreasureSystem>().TreasureDestroyed();
                 Destroy(gameObject); //Destroy Self
             }
         }

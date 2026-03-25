@@ -3,12 +3,12 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public bool isPaused = false;
-    GameObject pauseButton;
+    public GameObject pauseButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pauseButton = GameObject.FindGameObjectWithTag("PauseButton");
+        //pauseButton = GameObject.FindGameObjectWithTag("PauseButton");
         this.gameObject.SetActive(isPaused);
     }
 

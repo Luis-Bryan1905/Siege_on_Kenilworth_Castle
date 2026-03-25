@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ball
   IsPressed: 0
   active: 1
-  lifeSpan: 10
+  lifeSpan: 3
   maxX: 10
   minY: 1.5
   maxY: 10

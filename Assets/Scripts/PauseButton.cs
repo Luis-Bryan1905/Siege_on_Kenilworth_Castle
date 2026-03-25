@@ -5,12 +5,13 @@ public class PauseButton : MonoBehaviour
 {
 
     public bool isPaused;
-    GameObject PauseMenu;
+    public bool TimeScaleDebug;
+    public GameObject PauseMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+        //PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         isPaused = false;
     }
 
@@ -21,12 +22,22 @@ public class PauseButton : MonoBehaviour
         {
             case true:
                 Pause();
-                Debug.Log("PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+
+                if (TimeScaleDebug == true)
+                {
+                    Debug.Log("PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+                }
+
                 break;
 
             case false:
                 Unpause();
-                Debug.Log("NOT PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+
+                if (TimeScaleDebug == true)
+                {
+                    Debug.Log("NOT PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+                }
+
                 break;
         }
     }
@@ -35,7 +46,12 @@ public class PauseButton : MonoBehaviour
     {
         isPaused = false; 
         Time.timeScale = 1f;
-        Debug.Log("NOT PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+
+        if (TimeScaleDebug == true)
+        {
+            Debug.Log("NOT PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+        }
+
         this.gameObject.SetActive(true);
     }
 
@@ -43,7 +59,12 @@ public class PauseButton : MonoBehaviour
     {
         isPaused = true;
         Time.timeScale = 0f;
-        Debug.Log("PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+
+        if (TimeScaleDebug == true)
+        {
+            Debug.Log("PAUSED: Time.timeScale = " + Time.timeScale.ToString());
+        }
+
         PauseMenu.GetComponent<PauseMenu>().Activate();
         this.gameObject.SetActive(false);
     }
