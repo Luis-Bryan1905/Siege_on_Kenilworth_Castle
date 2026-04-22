@@ -47,6 +47,16 @@ public class score : MonoBehaviour
         {
             Dragscore();
         }
+
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Pressed middle-click.");
+        }
+            
     }
 
     private void Dragscore()
